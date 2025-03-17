@@ -10,7 +10,7 @@ This page includes data and functions associated with the paper "Analyzing brain
 
 #### Functions
 
-`fdft` is a function to calculate discrete fourier transform (DFT).
+`fdft` is a function to calculate Discrete Fourier Transform (DFT).
 
 `frea` is a function to extract the real part of DFT under each frequency.
 
