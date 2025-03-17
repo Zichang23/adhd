@@ -8,5 +8,30 @@ The data we will use is `0010020_roi_aal_mask_pad.csv`, which is a rs-fMRI datas
 
 ### Functions
 
+Here we will use four functions, `fdft`, `freal`, `f_para_boot`, and `f_all`.
+
+Below are all the arguments in `fdft`. `x` is a time series vector and `w` is a specific frequency.
+
+```{}
+fdft(x, w)
+```
+
+Below are the arguments in `freal`. `data` is a weakly stationary time series matrix and `w` is a specific frequency.
+
+```{}
+freal(data, w)
+```
+
+Below are the three arguments in `f_para_boot`. `x` is the real part (a matrix) of spectral density. `alpha` is the significance level. `B` is the number of iterations.
+
+```{}
+f_para_boot(x, alpha, B)
+```
+
+Below are all the arguments in `f_all`. `x` is the standardized time series matrix. `y` is the length of a frequency vector. `alpha` is the significance level.
+
+```{}
+f_all(x, y, alpha)
+```
 
 ### Application
