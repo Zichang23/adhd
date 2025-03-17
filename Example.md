@@ -65,7 +65,7 @@ dft_result <- apply(adhd2, 2, function(x)fdft(x, w = 0.2))
 real_result <- freal(adhd2, w = 0.2)
 
 # apply function `f_para_boot` to get the bootstrap CIs and estimated values for element in the real part (a matrix)
-boot_result <- f_para_boot(real_result, alpha = 0.05, B = 1000)
+boot_result <- f_para_boot(real_result, alpha = 0.01, B = 1000)
 
 # apply function `f_all` to a range of frequencies
 result <- lappy(1:length(freq0), function(x)f_all(adhd2, x, alpha = 0.01))
