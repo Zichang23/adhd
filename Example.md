@@ -80,4 +80,4 @@ result <- lappy(1:length(freq0), function(x)f_all(adhd2, x, alpha = 0.01))
 head(result[[1]][,1:10])
 ```
 
-<img src="docs/table.png" width="600" />
+<img src="docs/table.png" width="400" />
