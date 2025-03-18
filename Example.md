@@ -46,7 +46,11 @@ name0 <- read_excel("aal_labels.xlsx",col_names = F)
 freq0 <- seq(0.01, 0.2, 0.01)
 length(freq0)
 freq0
+```
 
+<img src="docs/frequencies.png" width="600" />
+
+```{}
 # manipulate data
 adhd_name <- adhd[,1]
 adhd1 <- t(adhd[,-1])
@@ -56,8 +60,12 @@ colnames(adhd1) <- name0[,2]
 # standardize data
 fnorm <- function(x){(x-mean(x,na.rm = T))/sd(x,na.rm = T)}
 adhd2 <- apply(adhd1, 2, fnorm)
-head(adhd2)
+head(adhd2[,1:5])
+```
 
+<img src="docs/standardized.png" width="600" />
+
+```{}
 # apply function `fdft` to calculate DFT for a time series matrix
 dft_result <- apply(adhd2, 2, function(x)fdft(x, w = 0.2))
 
@@ -69,5 +77,7 @@ boot_result <- f_para_boot(real_result, alpha = 0.01, B = 1000)
 
 # apply function `f_all` to a range of frequencies
 result <- lappy(1:length(freq0), function(x)f_all(adhd2, x, alpha = 0.01))
-
+head(result[[1]][,1:10])
 ```
+
+<img src="docs/table.png" width="600" />
