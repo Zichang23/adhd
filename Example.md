@@ -48,7 +48,7 @@ length(freq0)
 freq0
 ```
 
-<img src="docs/frequencies.png" width="600" />
+<img src="docs/frequencies.png" width="630" />
 
 ```{}
 # manipulate data
@@ -63,7 +63,7 @@ adhd2 <- apply(adhd1, 2, fnorm)
 head(adhd2[,1:5])
 ```
 
-<img src="docs/standardized.png" width="600" />
+<img src="docs/standardized.png" width="550" />
 
 ```{}
 # apply function `fdft` to calculate DFT for a time series matrix
@@ -80,4 +80,4 @@ result <- lappy(1:length(freq0), function(x)f_all(adhd2, x, alpha = 0.01))
 head(result[[1]][,1:10])
 ```
 
-<img src="docs/table.png" width="400" />
+<img src="docs/table.png" width="390" />
