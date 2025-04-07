@@ -5,7 +5,7 @@ fdft <- function(x, w) {
   N <- length(x)
   result <- 0
   for (k in 1:N) {
-    result <- x[k] * exp(-1i * k* w) + result
+    result <- x[k] * exp(-1i * 2* pi* k* w) + result
   }
   return(result/sqrt(2*pi*N))
 }
