@@ -41,6 +41,7 @@ f_all(x, y, alpha)
 adhd <- read.csv("0010020_roi_aal_mask_pad.csv", header = T)
 library(readxl)
 name0 <- read_excel("aal_labels.xlsx",col_names = F)
+name0 <- data.frame(name0)
 
 # specify frequencies
 freq0 <- seq(0.01, 0.2, 0.01)
@@ -76,7 +77,7 @@ real_result <- freal(adhd2, w = 0.2)
 boot_result <- f_para_boot(real_result, alpha = 0.01, B = 1000)
 
 # apply function `f_all` to a range of frequencies
-result <- lappy(1:length(freq0), function(x)f_all(adhd2, x, alpha = 0.01))
+result <- lapply(1:length(freq0), function(x)f_all(adhd2, x, alpha = 0.01))
 head(result[[1]][,1:10])
 ```
 
